@@ -1,18 +1,19 @@
-name: My First GitHub Workflow
+name: My Second Github Action (over ride)
 
 on: push
 
 jobs:
     first_job:
-        runs-on: ubuntu-latest
+        runs-on: ubuntu-24.04-arm
         steps:
-            - name: Checking out to my github repository
+            - name: Checking out my repository
               uses: actions/checkout@v6
+
             - name: Welcome Message
-              run: echo "Initiating My GitHub Action"
+              run: echo "WELCOME MESSAGE"
 
             - name: List Files
-              run: ls -a
+              run: mkdir build && ls -a
 
-            - name: Read Files
+            - name: Opening README.md
               run: cat README.md
