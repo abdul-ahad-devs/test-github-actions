@@ -3,17 +3,14 @@ name: My Second Github Action (over ride)
 on: push
 
 jobs:
-    first_job:
-        runs-on: ubuntu-24.04-arm
-        steps:
-            - name: Checking out my repository
-              uses: actions/checkout@v6
+  first_job:
+    runs-on: ubuntu-24.04-arm
+    steps:
+      - name: Checking out my repository
+        uses: actions/checkout@v6
 
-            - name: Welcome Message
-              run: echo "WELCOME MESSAGE"
-
-            - name: List Files
-              run: mkdir build && ls -a
-
-            - name: Opening README.md
-              run: cat README.md
+      - name: Welcome Message
+        run: |
+          echo "WELCOME MESSAGE"
+          mkdir build && ls -a
+          cat README.md
