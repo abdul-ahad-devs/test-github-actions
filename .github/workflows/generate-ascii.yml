@@ -13,7 +13,7 @@ jobs:
               run: cowsay -f dragon "Run for cover, I'm a dragon ... RAWR" >> dragon.txt
 
             - name: Upoading file to artifactory
-              uses: actions/upload-artifactory@v3
+              uses: actions/upload-artifact@v3
               with:
                   name: dragon-text-file
                   path: dragon.txt
@@ -23,7 +23,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Download Dragon Text File
-              uses: actions/download-artifactory@v3
+              uses: actions/download-artifact@v3
               with:
                   name: dragon-text-file
             - name: Test File Exists
@@ -34,7 +34,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Download Dragon Text File
-              uses: actions/download-artifactory@v3
+              uses: actions/download-artifact@v3
               with:
                   name: dragon-text-file
             - name: Read File
